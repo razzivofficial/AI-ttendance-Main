@@ -204,16 +204,17 @@ class Face_Rec_System:
 
 
 
-
-
-
-
-
-
-
         # right label frame
         Right_frame = LabelFrame(main_frame,bd=2,bg='white',relief="ridge",text="Student Details", font=('times new roman' , 12,'bold'))
         Right_frame.place(x=760, y=10, width=740, height=580)
+
+        # image right 
+        img_right_frame = Image.open(r"C:\Users\RAJIV\Desktop\ARS Resources\AI ttandance\AI-ttendance-Main\images\gettyimages-1022573162.jpg")
+        img_right_frame = img_right_frame.resize((720,130), resample=Image.LANCZOS)
+        self.photoimg_right_frame = ImageTk.PhotoImage(img_right_frame)
+
+        f_lbl = Label(Right_frame, image=self.photoimg_right_frame)
+        f_lbl.place(x=5, y=0, width=730, height=130)
 
 
 
