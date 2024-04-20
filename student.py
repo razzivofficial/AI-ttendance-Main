@@ -98,14 +98,77 @@ class Face_Rec_System:
 
         # Class Student information
         class_Student_frame = LabelFrame(Left_frame,bd=2,bg='white',relief="ridge",text="Class Student Information", font=('times new roman' , 12,'bold'))
-        class_Student_frame.place(x=5, y=265, width=720, height=285) 
+        class_Student_frame.place(x=5, y=265, width=720, height=285)
 
+        # Student ID
+        studentId_label = Label(class_Student_frame,text="StudentID:", font=('times new roman', 13,'bold'),bg='white')
+        studentId_label.grid(row=0,column=0,padx=10,pady=5,sticky=W)
 
+        studentID_entry=ttk.Entry(class_Student_frame,width=20, font=('times new roman', 13,'bold'))
+        studentID_entry.grid(row=0, column=1, padx=10,pady=5, sticky=W)
 
+        # Student Name
+        studentName_label = Label(class_Student_frame,text="Student Name:", font=('times new roman', 13,'bold'),bg='white')
+        studentName_label.grid(row=0,column=2,padx=10,pady=5,sticky=W)
 
+        studentName_entry=ttk.Entry(class_Student_frame, width=20, font=('times new roman', 13,'bold'))
+        studentName_entry.grid(row=0, column=3, padx=10,pady=5, sticky=W)
 
+        # Class Div %
+        class_div_label = Label(class_Student_frame,text="Percentage:", font=('times new roman', 13,'bold'),bg='white')
+        class_div_label.grid(row=1,column=0,padx=10,pady=5,sticky=W)
 
+        class_div_entry=ttk.Entry(class_Student_frame, width=20, font=('times new roman', 13,'bold'))
+        class_div_entry.grid(row=1, column=1, padx=10,pady=5, sticky=W)
 
+        # RollNo
+        roll_no_label = Label(class_Student_frame,text="Roll No:", font=('times new roman', 13,'bold'),bg='white')
+        roll_no_label.grid(row=1,column=2,padx=10,pady=5,sticky=W)
+
+        roll_no_entry=ttk.Entry(class_Student_frame, width=20, font=('times new roman', 13,'bold'))
+        roll_no_entry.grid(row=1, column=3, padx=10,pady=5, sticky=W)
+
+        # Gender
+        gender_label = Label(class_Student_frame,text="Gender:", font=('times new roman', 13,'bold'),bg='white')
+        gender_label.grid(row=2,column=0,padx=10,pady=5,sticky=W)
+
+        gender_entry=ttk.Entry(class_Student_frame, width=20, font=('times new roman', 13,'bold'))
+        gender_entry.grid(row=2, column=1, padx=10,pady=5, sticky=W)
+
+        # DOB
+        dob_label = Label(class_Student_frame,text="DOB:", font=('times new roman', 13,'bold'),bg='white')
+        dob_label.grid(row=2,column=2,padx=10,pady=5,sticky=W)
+
+        dob_entry=ttk.Entry(class_Student_frame, width=20, font=('times new roman', 13,'bold'))
+        dob_entry.grid(row=2, column=3, padx=10,pady=5, sticky=W)
+
+        # Email
+        email_label = Label(class_Student_frame,text="Email:", font=('times new roman', 13,'bold'),bg='white')
+        email_label.grid(row=3,column=0,padx=10,pady=5,sticky=W)
+
+        email_entry=ttk.Entry(class_Student_frame, width=20, font=('times new roman', 13,'bold'))
+        email_entry.grid(row=3, column=1, padx=10,pady=5, sticky=W)
+
+        # Phone no
+        phone_label = Label(class_Student_frame,text="Phone No:", font=('times new roman', 13,'bold'),bg='white')
+        phone_label.grid(row=3,column=2,padx=10,pady=5,sticky=W)
+
+        phone_entry=ttk.Entry(class_Student_frame, width=20, font=('times new roman', 13,'bold'))
+        phone_entry.grid(row=3, column=3, padx=10,pady=5, sticky=W)
+
+        # Address
+        address_label = Label(class_Student_frame,text="Phone No:", font=('times new roman', 13,'bold'),bg='white')
+        address_label.grid(row=4,column=0,padx=10,pady=5,sticky=W)
+
+        address_entry=ttk.Entry(class_Student_frame, width=20, font=('times new roman', 13,'bold'))
+        address_entry.grid(row=4, column=1, padx=10,pady=5, sticky=W)
+
+        # Faculty Advisor
+        teacher_label = Label(class_Student_frame,text="Faculty Advisor:", font=('times new roman', 13,'bold'),bg='white')
+        teacher_label.grid(row=4,column=2,padx=10,pady=5,sticky=W)
+
+        teacher_entry=ttk.Entry(class_Student_frame, width=20, font=('times new roman', 13,'bold'))
+        teacher_entry.grid(row=4, column=3, padx=10,pady=5, sticky=W)
 
 
 
