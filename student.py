@@ -57,7 +57,7 @@ class Face_Rec_System:
 
         # Current course information
         current_course_frame = LabelFrame(Left_frame,bd=2,bg='white',relief="ridge",text="Current Course Information", font=('times new roman' , 12,'bold'))
-        current_course_frame.place(x=5, y=135, width=720, height=130) 
+        current_course_frame.place(x=5, y=135, width=720, height=105) 
         
         # Dept info
         dept_label = Label(current_course_frame,text="Department", font=('times new roman', 12,'bold'),bg='white')
@@ -98,7 +98,7 @@ class Face_Rec_System:
 
         # Class Student information
         class_Student_frame = LabelFrame(Left_frame,bd=2,bg='white',relief="ridge",text="Class Student Information", font=('times new roman' , 12,'bold'))
-        class_Student_frame.place(x=5, y=265, width=720, height=285)
+        class_Student_frame.place(x=5, y=240, width=720, height=310)
 
         # Student ID
         studentId_label = Label(class_Student_frame,text="StudentID:", font=('times new roman', 13,'bold'),bg='white')
@@ -169,6 +169,45 @@ class Face_Rec_System:
 
         teacher_entry=ttk.Entry(class_Student_frame, width=20, font=('times new roman', 13,'bold'))
         teacher_entry.grid(row=4, column=3, padx=10,pady=5, sticky=W)
+
+        #Radio Buttons
+        radiobutton1=ttk.Radiobutton(class_Student_frame,text="Take Photo Samples",value="take")
+        radiobutton1.grid(row=6,column=0,padx=10,pady=5)
+
+        radiobutton2=ttk.Radiobutton(class_Student_frame,text="No Photo Sample",value="no")
+        radiobutton2.grid(row=6,column=1,padx=10,pady=5)
+
+        #Button Frame
+        btn_frame=Frame(class_Student_frame,bd=2,relief=RIDGE,bg='white')
+        btn_frame.place(x=0, y=210,width=715,height=75)
+
+        save_btn=Button(btn_frame,text="Save",width=17,font=('times new roman', 13,'bold'),bg='blue',fg='white')
+        save_btn.grid(row=0,column=0)
+
+        update_btn=Button(btn_frame,text="Update",width=17,font=('times new roman', 13,'bold'),bg='blue',fg='white')
+        update_btn.grid(row=0,column=1)
+
+        delete_btn=Button(btn_frame,text="Delete",width=17,font=('times new roman', 13,'bold'),bg='blue',fg='white')
+        delete_btn.grid(row=0,column=2)
+
+        reset_btn=Button(btn_frame,text="Reset",width=17,font=('times new roman', 13,'bold'),bg='blue',fg='white')
+        reset_btn.grid(row=0,column=3)
+
+        btn_frame1=Frame(class_Student_frame,relief=RIDGE,bg='white')
+        btn_frame1.place(x=0, y=250,width=715,height=35)
+
+        take_photo_btn=Button(btn_frame1,text="Take Photo Sample",width=35,font=('times new roman', 13,'bold'),bg='blue',fg='white')
+        take_photo_btn.grid(row=0,column=0)
+
+        update_photo_btn=Button(btn_frame1,text="Update Photo Sample",width=35,font=('times new roman', 13,'bold'),bg='blue',fg='white')
+        update_photo_btn.grid(row=0,column=1)
+
+
+
+
+
+
+
 
 
 
