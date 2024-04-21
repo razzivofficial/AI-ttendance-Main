@@ -86,7 +86,7 @@ class Face_Rec_System:
         year_combo.current(0)
         year_combo.grid(row=1, column=1,padx=2,pady=10,sticky=W)
 
-         # Semestrer info
+        # Semestrer info
         semester_label = Label(current_course_frame,text="Semester", font=('times new roman', 12,'bold'),bg='white')
         semester_label.grid(row=1,column=2,padx=10,sticky=W)
 
@@ -157,7 +157,7 @@ class Face_Rec_System:
         phone_entry.grid(row=3, column=3, padx=10,pady=5, sticky=W)
 
         # Address
-        address_label = Label(class_Student_frame,text="Phone No:", font=('times new roman', 13,'bold'),bg='white')
+        address_label = Label(class_Student_frame,text="Address:", font=('times new roman', 13,'bold'),bg='white')
         address_label.grid(row=4,column=0,padx=10,pady=5,sticky=W)
 
         address_entry=ttk.Entry(class_Student_frame, width=20, font=('times new roman', 13,'bold'))
@@ -196,13 +196,13 @@ class Face_Rec_System:
         btn_frame1=Frame(class_Student_frame,relief=RIDGE,bg='white')
         btn_frame1.place(x=0, y=250,width=715,height=35)
 
-        take_photo_btn=Button(btn_frame1,text="Take Photo Sample",width=35,font=('times new roman', 13,'bold'),bg='blue',fg='white')
+        take_photo_btn=Button(btn_frame1,text="Take Photo Sample",width=35,font=('times new roman', 13,'bold'),bg='red',fg='white')
         take_photo_btn.grid(row=0,column=0)
 
-        update_photo_btn=Button(btn_frame1,text="Update Photo Sample",width=35,font=('times new roman', 13,'bold'),bg='blue',fg='white')
+        update_photo_btn=Button(btn_frame1,text="Update Photo Sample",width=35,font=('times new roman', 13,'bold'),bg='red',fg='white')
         update_photo_btn.grid(row=0,column=1)
 
-
+        #---------------------------------------------------------------------#
 
         # right label frame
         Right_frame = LabelFrame(main_frame,bd=2,bg='white',relief="ridge",text="Student Details", font=('times new roman' , 12,'bold'))
@@ -216,6 +216,67 @@ class Face_Rec_System:
         f_lbl = Label(Right_frame, image=self.photoimg_right_frame)
         f_lbl.place(x=5, y=0, width=730, height=130)
 
+        #===============Search System===============#
+
+        # Class Student information
+        Search_frame = LabelFrame(Right_frame,bd=2,bg='white',relief="ridge",text="Search System", font=('times new roman' , 12,'bold'))
+        Search_frame.place(x=5, y=135, width=725, height=70)
+
+        search_label = Label(Search_frame,text="Search By:", font=('times new roman', 15,'bold'),bg='white')
+        search_label.grid(row=0,column=0,padx=10,pady=5,sticky=W)
+
+        search_combo = ttk.Combobox(Search_frame, font=('times new roman', 13, 'bold'), width=15,state='readonly')
+        search_combo['values'] = ("Select","Roll No","Phone No")
+        search_combo.current(0)
+        search_combo.grid(row=0, column=1,padx=2,pady=10,sticky=W)
+
+        search_entry=ttk.Entry(Search_frame, width=15, font=('times new roman', 13,'bold'))
+        search_entry.grid(row=0, column=2, padx=10,pady=5, sticky=W)
+
+        search_btn=Button(Search_frame,text="Search",width=12,font=('times new roman', 13,'bold'),bg='blue',fg='white')
+        search_btn.grid(row=0,column=3,padx=5)
+
+        showAll_btn=Button(Search_frame,text="Show All",width=12,font=('times new roman', 13,'bold'),bg='blue',fg='white')
+        showAll_btn.grid(row=0,column=4,padx=5)
+        
+        #===============Table Frame===============#
+
+        table_frame = Frame(Right_frame,bd=2,bg='white',relief="ridge")
+        table_frame.place(x=5, y=210, width=725, height=345)
+
+        scroll_x=ttk.Scrollbar(table_frame,orient=HORIZONTAL)
+        scroll_y=ttk.Scrollbar(table_frame,orient=VERTICAL)
+
+        self.student_table = ttk.Treeview(table_frame, columns=("col1", "col2", "col3", "col4", "col5", "col6", "col7", "col8", "col9", "col10", "col11", "col12", "col13", "col14", "col15", "col16", "col17", "col18", "col19", "col20"), xscrollcommand=scroll_x.set, yscrollcommand=scroll_y.set)
+        scroll_x.pack(side=BOTTOM,fill=X)
+        scroll_y.pack(side=RIGHT,fill=Y)
+        scroll_x.config(command=self.student_table.xview)
+        scroll_y.config(command=self.student_table.yview)
+
+        
+        
+
+        self.student_table.heading("col1", text="Department")
+        self.student_table.heading("col2", text="Course")
+        self.student_table.heading("col3", text="Admission Year")
+        self.student_table.heading("col4", text="Semester")
+        self.student_table.heading("col5", text="StudentID")
+        self.student_table.heading("col6", text="Name")
+        self.student_table.heading("col7", text="Percentage")
+        self.student_table.heading("col8", text="RollNo")
+        self.student_table.heading("col9", text="DOB")
+        self.student_table.heading("col10", text="Email")
+        self.student_table.heading("col11", text="Phone")
+        self.student_table.heading("col12", text="Address")
+        self.student_table.heading("col13", text="FacultyAdvisor") 
+        self.student_table.heading("col14", text="PhotoSampleStatus")
+
+        self.student_table["show"] = "headings"
+
+
+        self.student_table.column("dept",width=100)
+
+        self.student_table.pack(fill=BOTH, expand=True)  
 
 
 if __name__ == "__main__":
