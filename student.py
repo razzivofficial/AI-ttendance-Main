@@ -239,7 +239,7 @@ class Face_Rec_System:
         showAll_btn=Button(Search_frame,text="Show All",width=12,font=('times new roman', 13,'bold'),bg='blue',fg='white')
         showAll_btn.grid(row=0,column=4,padx=5)
         
-       #===============Table Frame===============#
+        #===============Table Frame===============#
 
         table_frame = Frame(Right_frame,bd=2,bg='white',relief="ridge")
         table_frame.place(x=5, y=210, width=725, height=345)
@@ -247,32 +247,48 @@ class Face_Rec_System:
         scroll_x=ttk.Scrollbar(table_frame,orient=HORIZONTAL)
         scroll_y=ttk.Scrollbar(table_frame,orient=VERTICAL)
 
-        self.student_table = ttk.Treeview(table_frame, columns=("col1", "col2", "col3", "col4", "col5", "col6", "col7", "col8", "col9", "col10", "col11", "col12", "col13", "col14"), xscrollcommand=scroll_x.set, yscrollcommand=scroll_y.set)
+        self.student_table = ttk.Treeview(table_frame, columns=("dept", "course", "admissionYear", "sem", "studentID", "name", "percentage", "rollNo", "gender", "dob", "email", "phone", "address", "facultyAdvisor", "photo"), xscrollcommand=scroll_x.set, yscrollcommand=scroll_y.set)
         scroll_x.pack(side=BOTTOM,fill=X)
         scroll_y.pack(side=RIGHT,fill=Y)
         scroll_x.config(command=self.student_table.xview)
         scroll_y.config(command=self.student_table.yview)
 
-        self.student_table.heading("col1", text="Department")
-        self.student_table.heading("col2", text="Course")
-        self.student_table.heading("col3", text="Admission Year")
-        self.student_table.heading("col4", text="Semester")
-        self.student_table.heading("col5", text="StudentID")
-        self.student_table.heading("col6", text="Name")
-        self.student_table.heading("col7", text="Percentage")
-        self.student_table.heading("col8", text="RollNo")
-        self.student_table.heading("col9", text="DOB")
-        self.student_table.heading("col10", text="Email")
-        self.student_table.heading("col11", text="Phone")
-        self.student_table.heading("col12", text="Address")
-        self.student_table.heading("col13", text="FacultyAdvisor") 
-        self.student_table.heading("col14", text="PhotoSampleStatus")
+        self.student_table.heading("dept", text="Department")
+        self.student_table.heading("course", text="Course")
+        self.student_table.heading("admissionYear", text="Admission Year")
+        self.student_table.heading("sem", text="Semester")
+        self.student_table.heading("studentID", text="StudentID")
+        self.student_table.heading("name", text="Name")
+        self.student_table.heading("percentage", text="Percentage")
+        self.student_table.heading("rollNo", text="RollNo")
+        self.student_table.heading("gender", text="Gender")
+        self.student_table.heading("dob", text="DOB")
+        self.student_table.heading("email", text="Email")
+        self.student_table.heading("phone", text="Phone")
+        self.student_table.heading("address", text="Address")
+        self.student_table.heading("facultyAdvisor", text="FacultyAdvisor") 
+        self.student_table.heading("photo", text="PhotoSample")
 
         self.student_table["show"] = "headings"
 
-        self.student_table.column("col1", width=100)
+        self.student_table.column("dept", width=100)
+        self.student_table.column("course", width=100)
+        self.student_table.column("admissionYear", width=100)
+        self.student_table.column("sem", width=100)
+        self.student_table.column("studentID", width=100)
+        self.student_table.column("name", width=100)
+        self.student_table.column("percentage", width=100)
+        self.student_table.column("rollNo", width=100)
+        self.student_table.column("gender", width=100)
+        self.student_table.column("dob", width=100)
+        self.student_table.column("email", width=100)
+        self.student_table.column("phone", width=100)
+        self.student_table.column("address", width=100)
+        self.student_table.column("facultyAdvisor", width=100)
+        self.student_table.column("photo", width=100)
 
         self.student_table.pack(fill=BOTH, expand=True)
+
 
 
 if __name__ == "__main__":
