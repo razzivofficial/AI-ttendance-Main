@@ -2,11 +2,28 @@ from tkinter import*
 from tkinter import ttk
 from PIL import Image, ImageTk
 
-class Face_Rec_System:
+class Student:
     def __init__(self, root):
         self.root = root
         self.root.geometry("1530x790+0+0")
         self.root.title("Face Recognition Attendance System")
+
+        #==========Variables==========#
+
+        self.var_dept=StringVar()
+        self.var_course=StringVar()
+        self.var_admissionYear=StringVar()
+        self.var_sem=StringVar()
+        self.var_sic=StringVar()
+        self.var_name=StringVar()
+        self.var_percentage=StringVar()
+        self.var_rollNo=StringVar()
+        self.var_gender=StringVar()
+        self.var_dob=StringVar()
+        self.var_email=StringVar()
+        self.var_phone=StringVar()
+        self.var_address=StringVar()
+        self.facultyAdvisor=StringVar()
 
         #image1
         img1 = Image.open(r"C:\Users\RAJIV\Desktop\ARS Resources\AI ttandance\AI-ttendance-Main\images\face-recognition.png")
@@ -101,11 +118,11 @@ class Face_Rec_System:
         class_Student_frame.place(x=5, y=240, width=720, height=310)
 
         # Student ID
-        studentId_label = Label(class_Student_frame,text="StudentID:", font=('times new roman', 13,'bold'),bg='white')
-        studentId_label.grid(row=0,column=0,padx=10,pady=5,sticky=W)
+        sic_label = Label(class_Student_frame,text="SIC:", font=('times new roman', 13,'bold'),bg='white')
+        sic_label.grid(row=0,column=0,padx=10,pady=5,sticky=W)
 
-        studentID_entry=ttk.Entry(class_Student_frame,width=20, font=('times new roman', 13,'bold'))
-        studentID_entry.grid(row=0, column=1, padx=10,pady=5, sticky=W)
+        sic_entry=ttk.Entry(class_Student_frame,width=20, font=('times new roman', 13,'bold'))
+        sic_entry.grid(row=0, column=1, padx=10,pady=5, sticky=W)
 
         # Student Name
         studentName_label = Label(class_Student_frame,text="Student Name:", font=('times new roman', 13,'bold'),bg='white')
@@ -247,7 +264,7 @@ class Face_Rec_System:
         scroll_x=ttk.Scrollbar(table_frame,orient=HORIZONTAL)
         scroll_y=ttk.Scrollbar(table_frame,orient=VERTICAL)
 
-        self.student_table = ttk.Treeview(table_frame, columns=("dept", "course", "admissionYear", "sem", "studentID", "name", "percentage", "rollNo", "gender", "dob", "email", "phone", "address", "facultyAdvisor", "photo"), xscrollcommand=scroll_x.set, yscrollcommand=scroll_y.set)
+        self.student_table = ttk.Treeview(table_frame, columns=("dept", "course", "admissionYear", "sem", "sic", "name", "percentage", "rollNo", "gender", "dob", "email", "phone", "address", "facultyAdvisor", "photo"), xscrollcommand=scroll_x.set, yscrollcommand=scroll_y.set)
         scroll_x.pack(side=BOTTOM,fill=X)
         scroll_y.pack(side=RIGHT,fill=Y)
         scroll_x.config(command=self.student_table.xview)
@@ -257,7 +274,7 @@ class Face_Rec_System:
         self.student_table.heading("course", text="Course")
         self.student_table.heading("admissionYear", text="Admission Year")
         self.student_table.heading("sem", text="Semester")
-        self.student_table.heading("studentID", text="StudentID")
+        self.student_table.heading("sic", text="SIC")
         self.student_table.heading("name", text="Name")
         self.student_table.heading("percentage", text="Percentage")
         self.student_table.heading("rollNo", text="RollNo")
@@ -267,7 +284,7 @@ class Face_Rec_System:
         self.student_table.heading("phone", text="Phone")
         self.student_table.heading("address", text="Address")
         self.student_table.heading("facultyAdvisor", text="FacultyAdvisor") 
-        self.student_table.heading("photo", text="PhotoSample")
+        self.student_table.heading("photo", text="PhotoSampleStatus")
 
         self.student_table["show"] = "headings"
 
@@ -275,7 +292,7 @@ class Face_Rec_System:
         self.student_table.column("course", width=100)
         self.student_table.column("admissionYear", width=100)
         self.student_table.column("sem", width=100)
-        self.student_table.column("studentID", width=100)
+        self.student_table.column("SIC", width=100)
         self.student_table.column("name", width=100)
         self.student_table.column("percentage", width=100)
         self.student_table.column("rollNo", width=100)
@@ -285,9 +302,19 @@ class Face_Rec_System:
         self.student_table.column("phone", width=100)
         self.student_table.column("address", width=100)
         self.student_table.column("facultyAdvisor", width=100)
-        self.student_table.column("photo", width=100)
+        self.student_table.column("photo", width=150)
 
         self.student_table.pack(fill=BOTH, expand=True)
+
+
+    #==================Function declaration==================#
+    def student_details(self):
+        self.new_window=Toplevel(self.root)
+        self.app=Student(self.new_window)
+
+
+
+
 
 
 
